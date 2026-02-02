@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Đào tạo Tháng 01/2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .report-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .section-title {
+            color: #1e3a8a;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .table-custom th {
+            background-color: #f1f5f9;
+            color: #1e3a8a;
+            padding: 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .table-custom td {
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        .alert-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <div class="max-w-5xl mx-auto py-10 px-4">
+        <!-- Main Header -->
+        <header class="header-gradient rounded-2xl p-10 mb-10 text-center text-white shadow-xl">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-2 uppercase tracking-tight">Báo cáo Công tác Đào tạo</h1>
+            <p class="text-lg opacity-90 font-medium">Tháng 01/2026 & Kế hoạch Tháng 02/2026</p>
+        </header>
+
+        <!-- I. Tổng quan -->
+        <section class="report-card">
+            <h2 class="section-title">I. Tổng quan chung</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold text-blue-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Kết quả Tháng 01/2026
+                    </h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Triển khai học kỳ 2 năm học 2025-2026.</li>
+                        <li>• Thi chứng chỉ CNTT cơ bản cho <b>223 sinh viên</b>.</li>
+                        <li>• Vận hành học tập Tiếng Anh 1 trên hệ thống LMS.</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                    <h3 class="font-bold text-blue-900 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
+                        Trọng tâm Tháng 02/2026
+                    </h3>
+                    <ul class="space-y-2 text-blue-800 text-sm">
+                        <li>• Kế hoạch học QP-AN cho sinh viên K24.</li>
+                        <li>• Điều chỉnh lịch trình theo nghỉ Tết Nguyên đán.</li>
+                        <li>• Rà soát CTĐT sau kiểm định chất lượng.</li>
+                        <li>• Tổ chức các đợt học lại giải quyết nợ môn.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. Tiến độ đào tạo -->
+        <section class="report-card">
+            <h2 class="section-title">II. Tiến độ đào tạo</h2>
+            <div class="alert-box mb-6">
+                <p class="font-semibold text-orange-800 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                    Ghi chú về tiến độ:
+                </p>
+                <p class="text-orange-700 mt-1">Kỳ 2 bắt đầu <b>muộn hơn 1 tuần</b> so với kế hoạch ban đầu. Nguyên nhân do công tác kiểm định chất lượng các lớp phải nghỉ để phục vụ đoàn đánh giá. Hiện đang triển khai học bù nhưng tiến độ chung vẫn đang bị chậm.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <span class="block text-2xl font-bold text-blue-700">83</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Lớp vận hành</span>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <span class="block text-2xl font-bold text-blue-700">21</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Chương trình ĐT</span>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <span class="block text-2xl font-bold text-red-600">-7</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Lớp sau ghép</span>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <span class="block text-2xl font-bold text-green-600">100%</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Nhập điểm HK1</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- III. Cơ sở vật chất -->
+        <section class="report-card">
+            <h2 class="section-title">III. Cơ sở vật chất</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm table-custom">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Cơ sở</th>
+                                <th>Số phòng</th>
+                                <th>Công suất (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dinhle</td>
+                                <td class="text-center">23</td>
+                                <td class="text-center font-bold text-blue-600">79%</td>
+                            </tr>
+                            <tr>
+                                <td>Cầu Giấy</td>
+                                <td class="text-center">6</td>
+                                <td class="text-center font-bold text-blue-600">28%</td>
+                            </tr>
+                            <tr>
+                                <td>Phúc Diễn</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center font-bold text-blue-600">79%</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="font-bold">Tổng hợp</td>
+                                <td class="text-center font-bold text-blue-900">31</td>
+                                <td class="text-center font-bold text-blue-900">62%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="chart-container">
+                    <canvas id="facilityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- IV. Hồ sơ vận hành -->
+        <section class="report-card border-2 border-red-50">
+            <h2 class="section-title" style="border-left-color: #ef4444; color: #b91c1c;">IV. Hồ sơ vận hành & Nhân sự</h2>
+            <div class="bg-red-50 p-5 rounded-xl text-red-900 mb-6">
+                <p class="font-bold mb-2">⚠ Tình trạng biến động nhân sự:</p>
+                <p class="text-sm leading-relaxed">
+                    Việc <b>không còn bộ phận thư ký khoa</b> dẫn đến công tác hồ sơ bàn giao trực tiếp cho giảng viên. Giai đoạn đầu giảng viên còn lúng túng, dẫn đến nộp hồ sơ lắt nhắt và sai sót trong sổ lên lớp (đặc biệt là mục điểm danh sinh viên vắng).
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-4 border rounded-lg bg-slate-50">
+                    <h4 class="font-bold text-blue-800 text-sm mb-2 uppercase">Hệ thống UMS</h4>
+                    <p class="text-xs text-slate-600 italic">Duy trì nhập điểm định kỳ. Điểm danh còn đối phó do lỗi mạng.</p>
+                </div>
+                <div class="p-4 border rounded-lg bg-slate-50">
+                    <h4 class="font-bold text-blue-800 text-sm mb-2 uppercase">Hệ thống LMS</h4>
+                    <p class="text-xs text-slate-600 italic">Sức ỳ sinh viên cao, chỉ khoảng 50% chủ động vào học môn TA1.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- V. Hệ Phổ thông Cao đẳng -->
+        <section class="report-card">
+            <h2 class="section-title">V. Hệ Phổ thông cao đẳng (9+)</h2>
+            <div class="space-y-6">
+                <p class="text-slate-600">Phối hợp với GDTX Tây Hồ quản lý <b>668 học sinh</b> (Khối 10, 11, 12):</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-5 border rounded-xl hover:shadow-md transition-shadow">
+                        <h4 class="font-bold text-blue-700 mb-3 underline decoration-blue-200">Chi tiết công việc:</h4>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li>• Đã sơ kết học kỳ 1 cho toàn bộ 3 khối.</li>
+                            <li>• Hoàn thiện hồ sơ miễn giảm học phí HK1.</li>
+                            <li>• Triển khai hồ sơ văn hóa 4 môn cho hệ 9+4.</li>
+                            <li>• Cấp phát Email trường cho 100% học sinh mới.</li>
+                        </ul>
+                    </div>
+                    <div class="p-5 border rounded-xl hover:shadow-md transition-shadow">
+                        <h4 class="font-bold text-blue-700 mb-3 underline decoration-blue-200">Kỷ luật & Nề nếp:</h4>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li>• Thành lập đội <b>Sao đỏ</b> kiểm soát nề nếp.</li>
+                            <li>• Xử lý dứt điểm các trường hợp trốn tiết lớp 10A5.</li>
+                            <li>• Duy trì sinh hoạt chuyên đề lớp hàng tháng.</li>
+                            <li>• Giám sát đồng phục và thẻ tên nghiêm ngặt.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VI. Thống kê tỷ lệ đi học -->
+        <section class="report-card">
+            <h2 class="section-title">VI. Thống kê tỷ lệ đi học tháng 1</h2>
+            
+            <div class="space-y-12">
+                <!-- Cao đẳng -->
+                <div>
+                    <h3 class="font-bold text-lg text-slate-700 mb-4 border-b pb-2 flex justify-between">
+                        <span>1. Hệ Cao đẳng</span>
+                        <span class="text-blue-600 text-sm">Trung bình: 79.5%</span>
+                    </h3>
+                    <div class="chart-container">
+                        <canvas id="collegeChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Phổ thông -->
+                <div>
+                    <h3 class="font-bold text-lg text-slate-700 mb-4 border-b pb-2 flex justify-between">
+                        <span>2. Hệ Phổ thông (9+)</span>
+                        <span class="text-blue-600 text-sm">Trung bình: 77.5%</span>
+                    </h3>
+                    <div class="chart-container">
+                        <canvas id="highschoolChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tiếng Đức -->
+                <div>
+                    <h3 class="font-bold text-lg text-slate-700 mb-4 border-b pb-2 flex justify-between">
+                        <span>3. Hệ Tiếng Đức</span>
+                        <span class="text-blue-600 text-sm">Trung bình: 71.3%</span>
+                    </h3>
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="germanChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VII. Thống kê nợ môn -->
+        <section class="report-card">
+            <h2 class="section-title">VII. Thống kê tình hình nợ môn</h2>
+            <p class="text-sm text-slate-500 mb-6 italic">Tổng số nợ môn toàn trường: <b>1894 lượt</b>. Ưu tiên giải quyết dứt điểm cho khóa K22 để xét tốt nghiệp.</p>
+            <div class="chart-container">
+                <canvas id="debtChart"></canvas>
+            </div>
+        </section>
+
+        <footer class="text-center py-10 text-slate-400 text-sm">
+            <p class="font-bold text-slate-600 uppercase mb-1">Phòng Đào tạo - 2026</p>
+            <p>Tài liệu lưu hành nội bộ</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cấu hình màu sắc
+        const COLORS = {
+            blue: '#2563eb',
+            lightBlue: '#60a5fa',
+            darkBlue: '#1e3a8a',
+            orange: '#f97316',
+            slate: '#94a3b8'
+        };
+
+        // 1. Biểu đồ CSVC
+        new Chart(document.getElementById('facilityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Dinhle', 'Cầu Giấy', 'Phúc Diễn'],
+                datasets: [{
+                    label: 'Công suất sử dụng (%)',
+                    data: [79, 28, 79],
+                    backgroundColor: COLORS.blue,
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 2. Biểu đồ Cao đẳng
+        new Chart(document.getElementById('collegeChart'), {
+            type: 'bar',
+            data: {
+                labels: ['PDTA', 'T.Trung', 'Digital', 'TKĐH', 'UDPM', 'Ô tô', 'T.Nhật', 'TH', 'QTKS', 'QTDN', 'CSSĐ'],
+                datasets: [{
+                    label: 'Tỷ lệ đi học (%)',
+                    data: [89, 82, 73, 80, 77, 76, 83, 85, 72, 76, 83],
+                    backgroundColor: COLORS.darkBlue,
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 3. Biểu đồ Phổ thông
+        new Chart(document.getElementById('highschoolChart'), {
+            type: 'bar',
+            data: {
+                labels: ['10A4', '10A5', '10A6', '11A4', '11A5', '11A6', '12A3', '12A4', '12A10'],
+                datasets: [{
+                    label: 'Tỷ lệ đi học (%)',
+                    data: [75, 61, 72, 72, 84, 86, 88, 73, 83],
+                    backgroundColor: COLORS.blue,
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 4. Biểu đồ Tiếng Đức
+        new Chart(document.getElementById('germanChart'), {
+            type: 'bar',
+            data: {
+                labels: ['B1-09', 'A1-11', 'A2-10'],
+                datasets: [{
+                    label: 'Tỷ lệ đi học (%)',
+                    data: [76, 63, 75],
+                    backgroundColor: COLORS.lightBlue,
+                    borderRadius: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 5. Biểu đồ nợ môn
+        new Chart(document.getElementById('debtChart'), {
+            type: 'bar',
+            data: {
+                labels: ['K22+K22A', 'K23+23A', 'K24+24A'],
+                datasets: [
+                    { label: 'Đã học lại (%)', data: [86, 35, 22], backgroundColor: COLORS.darkBlue },
+                    { label: 'Chưa học lại (%)', data: [14, 65, 78], backgroundColor: COLORS.slate }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { stacked: true, beginAtZero: true, max: 100 } } }
+        });
+    </script>
+</body>
+</html>
