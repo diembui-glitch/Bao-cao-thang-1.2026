@@ -87,7 +87,7 @@
                         Trọng tâm Tháng 02/2026
                     </h3>
                     <ul class="space-y-2 text-blue-800 text-sm">
-                        <li>• Kế hoạch học QP-AN cho sinh viên K24.</li>
+                        <li>• Kế hoạch học QP-AN cho sinh viên Khóa K24.</li>
                         <li>• Điều chỉnh lịch trình theo nghỉ Tết Nguyên đán.</li>
                         <li>• Rà soát CTĐT sau kiểm định chất lượng.</li>
                         <li>• Tổ chức các đợt học lại giải quyết nợ môn.</li>
@@ -261,9 +261,50 @@
         <!-- VII. Thống kê nợ môn -->
         <section class="report-card">
             <h2 class="section-title">VII. Thống kê tình hình nợ môn</h2>
-            <p class="text-sm text-slate-500 mb-6 italic">Tổng số nợ môn toàn trường: <b>1894 lượt</b>. Ưu tiên giải quyết dứt điểm cho khóa K22 để xét tốt nghiệp.</p>
-            <div class="chart-container">
+            <p class="text-sm text-slate-500 mb-6 italic">Tổng số nợ môn toàn trường: <b>1894 lượt</b>. Ưu tiên giải quyết dứt điểm cho Khóa K22 để xét tốt nghiệp.</p>
+            
+            <!-- Biểu đồ -->
+            <div class="chart-container mb-10">
                 <canvas id="debtChart"></canvas>
+            </div>
+
+            <!-- Nội dung chi tiết bổ sung -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Khóa K22 & K22A -->
+                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                    <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                        <span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-3 text-sm">22</span>
+                        Khóa K22 & K22A
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm font-bold text-red-600 mb-1 uppercase tracking-wider">Tồn đọng:</p>
+                            <p class="text-sm text-slate-700 leading-relaxed italic">
+                                Số môn học tồn đọng còn tương đối nhiều. Hiện tại tất cả sinh viên đều đang học ghép với K23A, dẫn đến các ngành gặp nhiều khó khăn trong việc đẩy nhanh tiến độ để sinh viên kịp tốt nghiệp trước <b>tháng 05/2026</b>.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-green-700 mb-1 uppercase tracking-wider">Giải pháp:</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Thực hiện <b>ghép lớp tối đa</b>. Không chỉ ghép với K23A mà mở rộng ghép với các lớp K24, K24A, K25, K25A nhằm tăng tối đa số môn có thể trả nợ cho sinh viên.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Khóa K23 & K23A -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                        <span class="w-8 h-8 rounded-full bg-slate-600 text-white flex items-center justify-center mr-3 text-sm">23</span>
+                        Khóa K23 & K23A
+                    </h3>
+                    <div>
+                        <p class="text-sm font-bold text-slate-600 mb-1 uppercase tracking-wider">Tình hình & Kế hoạch:</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Đang tiến hành xây dựng tiến độ trả nợ môn chi tiết đối với từng ngành học. Mục tiêu đảm bảo số lượng sinh viên đủ điều kiện tốt nghiệp năm 2026 đạt tỷ lệ tối ưu.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
